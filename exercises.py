@@ -18,7 +18,16 @@
 # reversed_string = user_input[::-1]
 # print(f'Reversed string: {reversed_string}')
 
-user_input = input('Enter a sentence: ')
-reversed_sentence = user_input.split()[::-1]
-reversed_sentence = ' '.join(reversed_sentence)
-print(f'Reversed sentence: {reversed_sentence}')
+# user_input = input('Enter a sentence: ')
+# reversed_sentence = user_input.split()[::-1]
+# reversed_sentence = ' '.join(reversed_sentence)
+# print(f'Reversed sentence: {reversed_sentence}')
+
+# python -m venv venv
+import qrcode
+data = input('Enter data or link: ')
+filename = input('Enter file name: ')
+qr = qrcode.QRCode(box_size=15, border=5)
+image = qr.make_image(fill_color='black', back_color='white')
+image.save(filename)
+print(f'QR code saved as {filename}')
